@@ -41,12 +41,19 @@ def decript_file(key, all_files):
             print(f"{e} erro ao encriptografar")
 
 
+def print_decripted_file(files:list):
+    for file in files:
+        print(f'{file}Os arquivos foram decriptografados')
+    
+
 def main():
     dir = sys.argv[1] if len(sys.argv)>1 else DIR_DEFAULT
     all_files = list_files(dir)
     key = read_key('key.key')
 
     decripted_files = decript_file(key, all_files)
+
+    print_decripted_file(decripted_files)
 
 if __name__ == '__main__':
     main()
